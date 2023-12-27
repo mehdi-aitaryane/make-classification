@@ -9,6 +9,10 @@ def count_occurances(y):
     for i in range(len(arr[0])):
         print("class ", arr[0][i], " has ", arr[1][i], " items")
 
+def print_shape(X, y):
+    print("X shape is ", X.shape)
+    print("y shape is ", y.shape)
+
 def make_classification(n_samples=101, n_features=20, n_classes=2, noise=0.0, balanced=True, random_state=None, init = random_init):
     # Select random state
     np.random.seed(random_state)

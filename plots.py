@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 # Returns: None
 
 def scatter2D(title, xlabel, ylabel, X, y):
+    plt.figure(figsize=(20, 8))
     plt.scatter(X[:, 0], X[:, 1], c = y)
     plt.title(title)
     plt.xlabel(xlabel)
@@ -27,13 +28,17 @@ def scatter2D(title, xlabel, ylabel, X, y):
 # Returns: None
 
 def scatter3D(title, xlabel, ylabel, zlabel, X, y):
-    # Creating plot
-    ax = plt.axes(projection ="3d")
-    ax.scatter3D(X[:, 0], X[:, 1], X[:, 2], c = y)
-    plt.title(title)
+    # Create a new figure
+    fig = plt.figure(figsize=(28, 13))
+    # Add a subplot with 3D projection
+    ax = fig.add_subplot(111, projection='3d')
+    # Create the scatter plot
+    ax.scatter(X[:, 0], X[:, 1], X[:, 2], c=y)
+    # Set labels
     ax.set_xlabel(xlabel)
     ax.set_ylabel(ylabel)
     ax.set_zlabel(zlabel)
-    # Rotate the plot (change the angles as needed)
-    ax.view_init(elev=30 , azim=-75 )
+    # Set title
+    plt.title(title)
+    # Show the plot
     plt.show()
